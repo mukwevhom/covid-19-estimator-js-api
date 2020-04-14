@@ -3,9 +3,11 @@ const bodyParser = require('body-parser');
 const js2xmlparser = require("js2xmlparser");
 const morgan = require('morgan');
 const fs = require('fs');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 app.use(bodyParser.json({limit:'50mb'}));
 app.use(bodyParser.urlencoded({ limit:'50mb',extended: true }));
